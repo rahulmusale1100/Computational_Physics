@@ -1,0 +1,29 @@
+    ! Name = shrikant dattatraya thorat
+    ! date= 25/07/2019
+    ! No.= 2018P089
+
+    program  differential1
+    implicit none
+    integer :: i=1
+    real::a,b,f,x(1000),y(1000),z(1000),y0,t=0,k,dt
+    open(unit=1,file="euler1.dat")
+    write(*,*)"GIVEN DIFFERENTIAL EQUATION IS dN/dt=(kN)"
+    write(*,*)"initial values are"
+    read(*,*)y0,dt,k
+    y(1)=y0
+    z(1)=y0
+    x(1)=t
+    do i=1,100
+    	y(i+1)=y(i)+dt*k*y(i)
+    	z(i+1)=z(i)+dt*(k*z(i))+(z(i)+dt*k*z(i)))*0.5
+    !	z(i+1)=exp(k*t)
+    !	t=t+dt
+    enddo
+    do i=1,100
+       write(*,*)t,y(i+1),z(i+1)
+       write(1,*)t,y(i+1),z(i+1)
+       t=t+dt
+    enddo
+   
+    end program
+

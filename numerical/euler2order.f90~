@@ -1,0 +1,38 @@
+    ! Name = shrikant dattatraya thorat
+    ! date= 25/07/2019
+    ! No.= 2018P089
+    ! name= pendulam 
+
+    program  euler2order
+    implicit none
+    integer :: i,n
+    real:: x0,u0,v0,a,b,u,v,x1,u1,v1,h,f
+    open(unit=2,file="pendulam.out")
+    
+    write(*,*)"initial boundry values of xo,u0,v0"
+    read(*,*)x0,u0,v0
+    write(*,*)x0,u0,v0
+    
+    write(*,*)"values of n and h"
+    read(*,*)n,h
+    write(*,*)n,h
+    
+    do i=1,n
+       u1=u0+h*v0
+       v1=v0+h*(-(9.8/1.0)*sin(u0))
+       x1=x0+h
+       write(2,*)x1,u1,v1
+     !  write(*,*)x1,u1,v1
+       x0=x1
+       u0=u1
+       v0=v1
+    enddo
+    end program
+    
+   ! function f(x0,u0,v0)
+   !implicit none
+   !real::f,x0,u0,v0
+   !f=-(9.8/1.0)*sin(u0)
+   !return
+   !end function
+       

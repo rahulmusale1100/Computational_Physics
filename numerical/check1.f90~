@@ -1,0 +1,9 @@
+program
+implicit none
+real::a,b
+integer::i,j
+a=3.142
+b=sin(a/2)
+write(*,*)b
+end program
+
