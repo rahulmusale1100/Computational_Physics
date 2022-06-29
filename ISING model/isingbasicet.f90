@@ -1,8 +1,4 @@
-	!	NAME : Suraj Hiraman Patil
-	!	PRN  : 2018P064
-	!	PROGRAM : Metropolis algorithm for 2D ising model
-	!	E/n*n vs time
-	!_________________________________________________________________________________________
+
 	
 	program isingbasic
 	implicit none
